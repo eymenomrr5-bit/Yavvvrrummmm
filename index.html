@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Güzelim Hümeyram ❤️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0d021a;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Arka Planda Yağan Kalpler */
+    .heart-bg {
+      position: fixed;
+      top: -10vh;
+      font-size: 20px;
+      color: #ff4d6d;
+      user-select: none;
+      pointer-events: none;
+      z-index: 1;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Patlayan Kalp Efekti */
+    .burst-heart {
+      position: fixed;
+      pointer-events: none;
+      z-index: 999;
+      font-size: 24px;
+      animation: explode 1s ease-out forwards;
+    }
+
+    @keyframes explode {
+      0% { transform: translate(0, 0) scale(1); opacity: 1; }
+      100% { transform: translate(var(--dx), var(--dy)) scale(1.5); opacity: 0; }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 28px;
+      padding: 25px 20px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      position: relative;
+      z-index: 10;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(255, 77, 109, 0.2);
+      color: #ff758f;
+      border: 1px solid rgba(255, 77, 109, 0.4);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: #c77dff;
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
+
+    .route-box {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 16px;
+      padding: 12px;
+      margin-bottom: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-weight: 700;
+    }
+
+    .quote-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 4px solid #ff4d6d;
+      padding: 14px;
+      border-radius: 12px;
+      font-style: italic;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #e2e8f0;
+      margin-bottom: 18px;
+      text-align: left;
+    }
+
+    .btn-main {
+      background: linear-gradient(135deg, #ff4d6d, #e01e37);
+      color: white;
+      border: none;
+      padding: 15px 22px;
+      font-size: 1rem;
+      font-weight: 800;
+      border-radius: 50px;
+      cursor: pointer;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(255, 77, 109, 0.5);
+    }
+
+    .love-note {
+      min-height: 40px;
+      margin-top: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ff758f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .music-box {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .music-box p {
+      font-size: 0.8rem;
+      color: #c77dff;
+      margin-bottom: 10px;
+    }
+
+    /* YouTube Oynatıcı Alanı */
+    .youtube-wrapper {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    }
+
+    iframe {
+      width: 100%;
+      height: 180px;
+      border: none;
+      border-radius: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <span class="badge">❤️ 2. HAFTAMIZ KUTLU OLSUN</span>
+    <h1>Güzelim Hümeyram</h1>
+    <p class="subtitle">Senin için hazırladığım dünyaya hoş geldin ✨</p>
+
+    <div class="route-box">
+      <span>📍 Batman</span>
+      <span style="color: #ff4d6d;">✈️ 💖 ✈️</span>
+      <span>📍 Bursa</span>
+    </div>
+
+    <div class="quote-card">
+      "Madem seni çok istiyorlardı, öylece ortaya koymasalardı... Aldım bir kere, geri vermeyeceğim! Aşığım, mutluyum..." 🥰
+    </div>
+
+    <button class="btn-main" onclick="patlat(event)">Kalpleri Patlat ✨</button>
+
+    <div class="love-note" id="note">Sürpriz mesajın için butona bas!</div>
+
+    <div class="music-box">
+      <p>🎵 Dolu Kadehi Ters Tut - Madem (Nakarattan Başlar)</p>
+      <div class="youtube-wrapper">
+        <iframe 
+          id="ytPlayer"
+          src="https://www.youtube.com/embed/nfimIsHtDzA?start=56&autoplay=1&enablejsapi=1" 
+          allow="autoplay; encrypted-media" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Arka planda yağan kalpler
+    function createHearts() {
+      const heartSymbols = ['❤️', '💖', '💕', '✨', '💗'];
+      setInterval(() => {
+        const heart = document.createElement('div');
+        heart.classList.add('heart-bg');
+        heart.innerText = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+        heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+        document.body.appendChild(heart);
+
+        setTimeout(() => { heart.remove(); }, 5000);
+      }, 300);
+    }
+    createHearts();
+
+    const mesajlar = [
+      "İyi ki hayatımdasın Güzelim Hümeyram! ✨",
+      "Bursa'da gözlerinin içine bakacağım günü sabırsızlıkla bekliyorum! ❤️",
+      "Uzaklıklar sadece sarılacağımız anı daha özel kılar...",
+      "Aldım seni bir kere, asla geri vermeyeceğim! 🥰",
+      "Gülüşün dünyanın en güzel manzarası Hümeyram 💕"
+    ];
+
+    function patlat(e) {
+      for (let i = 0; i < 20; i++) {
+        const burst = document.createElement('div');
+        burst.classList.add('burst-heart');
+        burst.innerText = '❤️';
+        burst.style.left = e.clientX + 'px';
+        burst.style.top = e.clientY + 'px';
+        
+        const dx = (Math.random() - 0.5) * 300 + 'px';
+        const dy = (Math.random() - 0.5) * 300 + 'px';
+        burst.style.setProperty('--dx', dx);
+        burst.style.setProperty('--dy', dy);
+
+        document.body.appendChild(burst);
+        setTimeout(() => burst.remove(), 1000);
+      }
+
+      const rastgele = mesajlar[Math.floor(Math.random() * mesajlar.length)];
+      document.getElementById('note').innerText = rastgele;
+    }
+  </script>
+</body>
+</html>
